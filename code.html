@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Todo Dulce by Andu | Artesanal &amp; Urbano</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#8a4e45",
+              "inverse-primary": "#ffb4a8",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#e4e2dd",
+              "primary-container": "#a46359",
+              "secondary-container": "#dde3eb",
+              "primary": "#874c42",
+              "surface-variant": "#e4e2dd",
+              "primary-fixed": "#ffdad4",
+              "secondary-fixed-dim": "#c1c7cf",
+              "surface-container-high": "#eae8e3",
+              "error": "#ba1a1a",
+              "surface": "#fbf9f4",
+              "tertiary-fixed-dim": "#d3c4b1",
+              "primary-fixed-dim": "#ffb4a8",
+              "error-container": "#ffdad6",
+              "on-background": "#1b1c19",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#524341",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#595f66",
+              "surface-dim": "#dbdad5",
+              "tertiary-fixed": "#f0e0cc",
+              "on-primary": "#ffffff",
+              "on-surface": "#1b1c19",
+              "outline": "#857370",
+              "on-secondary": "#ffffff",
+              "surface-container": "#f0eee9",
+              "inverse-on-surface": "#f2f1ec",
+              "on-primary-fixed": "#370d08",
+              "on-secondary-container": "#5f656c",
+              "on-tertiary-fixed": "#221a0e",
+              "on-primary-fixed-variant": "#6e372f",
+              "on-tertiary": "#ffffff",
+              "surface-bright": "#fbf9f4",
+              "tertiary": "#655a4b",
+              "background": "#fbf9f4",
+              "on-tertiary-fixed-variant": "#4f4537",
+              "on-primary-container": "#fffbff",
+              "on-secondary-fixed-variant": "#41474e",
+              "inverse-surface": "#30312e",
+              "secondary-fixed": "#dde3eb",
+              "outline-variant": "#d7c2be",
+              "surface-container-low": "#f5f3ee",
+              "on-tertiary-container": "#fffbff",
+              "on-secondary-fixed": "#161c22",
+              "tertiary-container": "#7e7362"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Newsreader", "serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: 180px;
+            gap: 1rem;
+        }
+        .gallery-item-a { grid-column: span 5; grid-row: span 2; }
+        .gallery-item-b { grid-column: span 7; grid-row: span 1; }
+        .gallery-item-c { grid-column: span 4; grid-row: span 1; }
+        .gallery-item-d { grid-column: span 3; grid-row: span 1; }
+        .gallery-item-e { grid-column: span 5; grid-row: span 2; }
+        .gallery-item-f { grid-column: span 7; grid-row: span 1; }
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+            .gallery-item-a, .gallery-item-b, .gallery-item-c,
+            .gallery-item-d, .gallery-item-e, .gallery-item-f {
+                grid-column: span 1; grid-row: span 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/20">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-[0_10px_30px_rgba(27,28,25,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="font-headline font-extrabold text-xl text-stone-900 tracking-tighter">
+                Todo Dulce by Andu
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-primary font-bold font-label tracking-tight py-1 transition-all duration-300" href="#catalogo">Pastelería</a>
+<a class="text-secondary font-medium hover:text-on-surface font-label tracking-tight py-1 transition-all duration-300" href="#menu">Menú Ejecutivo</a>
+<a class="text-secondary font-medium hover:text-on-surface font-label tracking-tight py-1 transition-all duration-300" href="#galeria">Galería</a>
+<a class="text-secondary font-medium hover:text-on-surface font-label tracking-tight py-1 transition-all duration-300" href="#nosotros">Nosotros</a>
+</div>
+<a class="bg-primary hover:bg-primary-container text-on-primary font-label px-6 py-2.5 rounded-full scale-95 active:scale-90 transition-transform shadow-sm" href="https://wa.me/5493513569171?text=Hola!%20Quiero%20hacer%20un%20pedido%20%F0%9F%8E%82" target="_blank" rel="noopener">
+                Hacé tu Pedido
+            </a>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-on-surface/40 z-10"></div>
+<img class="w-full h-full object-cover" alt="Ganache de chocolate sobre pastelería artesanal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrEabxtwGIWnbFDxxzpKJsh1rhcoqfQlKJLpW8Qi8TURUa2UDLiOfnX02MLnvs60msl9wguVenlNnBcf2lsgLdCL_ovWnMNIXNDI4RZrmhGMN86Fo-4QGgo9HWb4d_pkWDZLLodi9ZlJ2B25MwTfUWnrnQ84irHAN4rpW_2PaMk9TkiUGffxc0w4pqn-X-hq8IacpvaHK_rd3Ufg9Il5LNy4iMpLeyyGR9IDrnO0jGSmVh0N6BuRGfBKr_bA9ayoUd9FxcrM4Mhvc-"/>
+</div>
+<div class="relative z-20 text-center px-6 max-w-4xl">
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl text-white tracking-tighter mb-8 leading-[0.9]">
+                Todo Dulce by Andu.<br/>
+<span class="font-body italic font-normal text-4xl md:text-5xl block mt-4 text-surface-container-low">El toque urbano del sabor artesanal.</span>
+</h1>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<a class="group relative bg-primary hover:bg-primary-container text-on-primary px-10 py-5 rounded-full font-label font-bold text-lg transition-all flex items-center gap-3 shadow-xl" href="https://wa.me/5493513569171?text=Hola!%20Quiero%20hacer%20un%20pedido%20%F0%9F%8E%82" target="_blank" rel="noopener">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+                    Pedir por WhatsApp
+                </a>
+<a class="text-white font-body italic text-2xl hover:text-surface-container-low transition-colors" href="#menu">
+                    Ver Menú Ejecutivo
+                </a>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+<span class="material-symbols-outlined text-white text-3xl">expand_more</span>
+</div>
+</header>
+
+<!-- Main Content Canvas -->
+<main class="relative z-10 bg-surface">
+
+<!-- Category Cards (Bento-style Grid) -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Pastelería Card -->
+<div class="md:col-span-7 group relative overflow-hidden rounded-xl h-[600px] bg-surface-container-low">
+<div class="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+<img class="w-full h-full object-cover" alt="Torta de chocolate con hoja de oro en cocina luminosa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMq95t46p_wWVx620U4ikVH83-wrZwNWqoCjhTmiclYd6Jm1rh7EBFgHZEZJfm9qKJi601Iodhd0ArpZXg96Z-TMtGHq5mdQoNxgciYg3AjtU5644MhgnyBY57sOvkh0dacz09kWvs85STqQGhKMKRBfwJSgSYdDWrZRQJ6tuFhyfnVpN4Ds-QR9bVvEySPCCCjcCEznJ10U2Qllf8GMFIIJSQZDCfNgFGE4XR9lH53ciTP8ksRUgwKXOSKeyw0n9H5vehm-SJw868"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 p-10 text-white">
+<span class="font-label text-xs uppercase tracking-widest mb-4 block text-primary-container font-bold">Artesanal</span>
+<h2 class="font-headline font-extrabold text-4xl mb-4">Pastelería</h2>
+<p class="font-body italic text-xl text-surface-container-highest max-w-md mb-6">Texturas que cuentan historias, desde clásicos reversionados hasta creaciones de autor.</p>
+<a class="inline-block bg-white text-on-surface font-label px-8 py-3 rounded-full group-hover:bg-primary group-hover:text-white transition-all" href="#catalogo">Explorar Colección</a>
+</div>
+</div>
+<!-- Menús Ejecutivos Card -->
+<div class="md:col-span-5 group relative overflow-hidden rounded-xl h-[600px] bg-surface-container-low">
+<div class="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+<img class="w-full h-full object-cover" alt="Bowl gourmet de salmón con aguacate y quinoa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx7x5YdvTlCCZae0pXQ28oWSH9fFt_4IUpEbHnQKtx-Ys8fZBjP7SQkdwKWUQ3AMjzMyYOSCl07oZs0XQNPuaYinN4BuppdNB7_CTMPMCAlYNIHa5pU5QNHbv0fHY02jyr-xoEJJ1Bk5gM-1yjThhqh9sVLoMFpKYdOtG7jbHY5ej8fv6N1EIPitl6gUImcXN6FKQR8rpIyXlyaerjP6OwACRyw-rVeyn0p8tC0CM4drvsKDcVUD7f7VYbivkGzRAn1FPvaSvF2YIm"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 p-10 text-white">
+<span class="font-label text-xs uppercase tracking-widest mb-4 block text-primary-container font-bold">Urbano</span>
+<h2 class="font-headline font-extrabold text-4xl mb-4">Menús Ejecutivos</h2>
+<p class="font-body italic text-xl text-surface-container-highest max-w-xs mb-6">El equilibrio perfecto para tu mediodía corporativo.</p>
+<a class="inline-block bg-white text-on-surface font-label px-8 py-3 rounded-full group-hover:bg-primary group-hover:text-white transition-all" href="#menu">Ver Menú Semanal</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- CATÁLOGO -->
+<!-- ─────────────────────────────────────────── -->
+<section id="catalogo" class="bg-surface-container py-28 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<span class="font-label text-xs uppercase tracking-widest text-primary font-bold">Nuestros productos</span>
+<h2 class="font-headline font-extrabold text-5xl md:text-6xl text-on-surface mt-4 tracking-tighter">Catálogo</h2>
+<p class="font-body italic text-xl text-secondary mt-4 max-w-xl">Cada pieza, pensada. Cada sabor, recordado.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+<!-- Card 1: Tortas Personalizadas -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(27,28,25,0.06)] hover:shadow-[0_20px_50px_rgba(27,28,25,0.12)] transition-shadow">
+<div class="relative h-72 overflow-hidden bg-gradient-to-br from-[#c4756a] via-[#a46359] to-[#874c42] flex items-center justify-center">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 30% 70%, #ffdad4 0%, transparent 60%), radial-gradient(circle at 80% 20%, #ffb4a8 0%, transparent 50%);"></div>
+<div class="relative text-center text-white/80 px-6">
+<span class="material-symbols-outlined text-6xl mb-3 block" style="font-variation-settings: 'FILL' 1;">cake</span>
+<p class="font-label text-xs uppercase tracking-widest">Foto próximamente</p>
+</div>
+<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+<span class="font-label text-xs font-bold text-white uppercase tracking-wider">Estrella</span>
+</div>
+</div>
+<div class="p-7">
+<h3 class="font-headline font-extrabold text-2xl text-on-surface mb-2">Tortas Personalizadas</h3>
+<p class="font-body italic text-secondary text-base leading-relaxed mb-4">Diseñadas a medida para tu ocasión especial. Elegís sabor, relleno, cobertura y la dedicatoria que haga llorar a alguien de la emoción.</p>
+<p class="font-label font-bold text-primary text-lg mb-6">Desde $18.000</p>
+<a class="flex items-center justify-center gap-2 w-full bg-primary text-on-primary font-label font-bold py-3 rounded-full hover:bg-primary-container transition-colors shadow-[0_10px_30px_rgba(135,76,66,0.25)]"
+   href="https://wa.me/5493513569171?text=Hola!%20Me%20gustar%C3%ADa%20encargar%20una%20torta%20personalizada%20%F0%9F%8E%82%20%C2%BFPodr%C3%ADas%20contarme%20las%20opciones%3F"
+   target="_blank" rel="noopener">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">chat</span>
+Consultar por WhatsApp
+</a>
+</div>
+</div>
+
+<!-- Card 2: Alfajores & Cookies -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(27,28,25,0.06)] hover:shadow-[0_20px_50px_rgba(27,28,25,0.12)] transition-shadow">
+<div class="relative h-72 overflow-hidden bg-gradient-to-br from-[#d4a574] via-[#b8895a] to-[#7e6248] flex items-center justify-center">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 70% 30%, #f0e0cc 0%, transparent 60%), radial-gradient(circle at 20% 80%, #d3c4b1 0%, transparent 50%);"></div>
+<div class="relative text-center text-white/80 px-6">
+<span class="material-symbols-outlined text-6xl mb-3 block" style="font-variation-settings: 'FILL' 1;">cookie</span>
+<p class="font-label text-xs uppercase tracking-widest">Foto próximamente</p>
+</div>
+<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+<span class="font-label text-xs font-bold text-white uppercase tracking-wider">Favorito</span>
+</div>
+</div>
+<div class="p-7">
+<h3 class="font-headline font-extrabold text-2xl text-on-surface mb-2">Alfajores &amp; Cookies</h3>
+<p class="font-body italic text-secondary text-base leading-relaxed mb-4">Maicena rellenos de dulce de leche artesanal, cookies de manteca con chips belgas. El tipo de cosa que pedís "una sola" y terminás pidiendo seis.</p>
+<p class="font-label font-bold text-primary text-lg mb-6">$900 c/u · Caja x6: $4.800</p>
+<a class="flex items-center justify-center gap-2 w-full bg-primary text-on-primary font-label font-bold py-3 rounded-full hover:bg-primary-container transition-colors shadow-[0_10px_30px_rgba(135,76,66,0.25)]"
+   href="https://wa.me/5493513569171?text=Hola!%20Quiero%20pedir%20alfajores%20y%20cookies%20%F0%9F%8D%AA%20%C2%BFTen%C3%A9s%20disponibilidad%20esta%20semana%3F"
+   target="_blank" rel="noopener">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">chat</span>
+Consultar por WhatsApp
+</a>
+</div>
+</div>
+
+<!-- Card 3: Combos -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(27,28,25,0.06)] hover:shadow-[0_20px_50px_rgba(27,28,25,0.12)] transition-shadow">
+<div class="relative h-72 overflow-hidden bg-gradient-to-br from-[#8a7968] via-[#6b5e4f] to-[#4a3f35] flex items-center justify-center">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 50% 50%, #e4e2dd 0%, transparent 60%), radial-gradient(circle at 10% 10%, #d7c2be 0%, transparent 50%);"></div>
+<div class="relative text-center text-white/80 px-6">
+<span class="material-symbols-outlined text-6xl mb-3 block" style="font-variation-settings: 'FILL' 1;">redeem</span>
+<p class="font-label text-xs uppercase tracking-widest">Foto próximamente</p>
+</div>
+<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+<span class="font-label text-xs font-bold text-white uppercase tracking-wider">Regalo</span>
+</div>
+</div>
+<div class="p-7">
+<h3 class="font-headline font-extrabold text-2xl text-on-surface mb-2">Combos</h3>
+<p class="font-body italic text-secondary text-base leading-relaxed mb-4">Curadas con cariño (y criterio): torta individual + 4 alfajores + packaging para regalo. La excusa perfecta para quedar bien sin mucho esfuerzo.</p>
+<p class="font-label font-bold text-primary text-lg mb-6">Desde $5.200</p>
+<a class="flex items-center justify-center gap-2 w-full bg-primary text-on-primary font-label font-bold py-3 rounded-full hover:bg-primary-container transition-colors shadow-[0_10px_30px_rgba(135,76,66,0.25)]"
+   href="https://wa.me/5493513569171?text=Hola!%20Me%20interesa%20un%20combo%20%F0%9F%8E%81%20%C2%BFQu%C3%A9%20opciones%20tienen%20disponibles%3F"
+   target="_blank" rel="noopener">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">chat</span>
+Consultar por WhatsApp
+</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- MENÚ EJECUTIVO SEMANAL -->
+<!-- ─────────────────────────────────────────── -->
+<section id="menu" class="bg-surface py-28 px-6">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-16">
+<span class="font-label text-xs uppercase tracking-widest text-primary font-bold">De lunes a viernes</span>
+<h2 class="font-headline font-extrabold text-5xl md:text-6xl text-on-surface mt-4 tracking-tighter">Menú Ejecutivo Semanal</h2>
+<p class="font-body italic text-xl text-secondary mt-4 max-w-xl mx-auto">Comida de verdad, hecha con tiempo, para personas que no lo tienen.</p>
+</div>
+
+<!-- Carta semanal -->
+<div class="space-y-5">
+
+<!-- Lunes -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(27,28,25,0.06)]">
+<div class="flex items-center gap-4 px-8 py-5 bg-primary/8" style="background-color: rgba(135,76,66,0.06);">
+<span class="font-label font-extrabold text-primary text-sm uppercase tracking-widest w-28">Lunes</span>
+<div class="h-px flex-1 bg-outline-variant"></div>
+<span class="font-label font-bold text-secondary text-sm">Combo completo $5.500</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-outline-variant/40 px-8">
+<div class="py-6 md:pr-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Entrada</p>
+<p class="font-headline font-bold text-on-surface text-base">Sopa de lentejas rojas</p>
+<p class="font-body italic text-secondary text-sm mt-1">Con jengibre, cúrcuma y cilantro fresco</p>
+</div>
+<div class="py-6 md:px-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Principal</p>
+<p class="font-headline font-bold text-on-surface text-base">Tarta de espinaca y queso</p>
+<p class="font-body italic text-secondary text-sm mt-1">Masa casera, ensalada verde de estación</p>
+</div>
+<div class="py-6 md:pl-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Postre</p>
+<p class="font-headline font-bold text-on-surface text-base">Alfajor de avena y maní</p>
+<p class="font-body italic text-secondary text-sm mt-1">Relleno de dulce de leche artesanal</p>
+</div>
+</div>
+</div>
+
+<!-- Martes -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(27,28,25,0.06)]">
+<div class="flex items-center gap-4 px-8 py-5" style="background-color: rgba(135,76,66,0.06);">
+<span class="font-label font-extrabold text-primary text-sm uppercase tracking-widest w-28">Martes</span>
+<div class="h-px flex-1 bg-outline-variant"></div>
+<span class="font-label font-bold text-secondary text-sm">Combo completo $5.500</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-outline-variant/40 px-8">
+<div class="py-6 md:pr-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Entrada</p>
+<p class="font-headline font-bold text-on-surface text-base">Ensalada César revisitada</p>
+<p class="font-body italic text-secondary text-sm mt-1">Croutons caseros, aderezo sin mayonesa</p>
+</div>
+<div class="py-6 md:px-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Principal</p>
+<p class="font-headline font-bold text-on-surface text-base">Medallón de pollo grillado</p>
+<p class="font-body italic text-secondary text-sm mt-1">Con arroz integral y salsa de limón</p>
+</div>
+<div class="py-6 md:pl-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Postre</p>
+<p class="font-headline font-bold text-on-surface text-base">Cookie de chocolate belga</p>
+<p class="font-body italic text-secondary text-sm mt-1">Tibia si tenés suerte, fría si no llegaste</p>
+</div>
+</div>
+</div>
+
+<!-- Miércoles -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(27,28,25,0.06)]">
+<div class="flex items-center gap-4 px-8 py-5" style="background-color: rgba(135,76,66,0.06);">
+<span class="font-label font-extrabold text-primary text-sm uppercase tracking-widest w-28">Miércoles</span>
+<div class="h-px flex-1 bg-outline-variant"></div>
+<span class="font-label font-bold text-secondary text-sm">Combo completo $5.500</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-outline-variant/40 px-8">
+<div class="py-6 md:pr-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Entrada</p>
+<p class="font-headline font-bold text-on-surface text-base">Crema de zapallo asado</p>
+<p class="font-body italic text-secondary text-sm mt-1">Con nuez moscada y semillas tostadas</p>
+</div>
+<div class="py-6 md:px-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Principal</p>
+<p class="font-headline font-bold text-on-surface text-base">Pasta fresca al pesto</p>
+<p class="font-body italic text-secondary text-sm mt-1">Albahaca de temporada, parmesano rallado al momento</p>
+</div>
+<div class="py-6 md:pl-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Postre</p>
+<p class="font-headline font-bold text-on-surface text-base">Brownie húmedo de cacao</p>
+<p class="font-body italic text-secondary text-sm mt-1">Con ganache y fleur de sel</p>
+</div>
+</div>
+</div>
+
+<!-- Jueves -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(27,28,25,0.06)]">
+<div class="flex items-center gap-4 px-8 py-5" style="background-color: rgba(135,76,66,0.06);">
+<span class="font-label font-extrabold text-primary text-sm uppercase tracking-widest w-28">Jueves</span>
+<div class="h-px flex-1 bg-outline-variant"></div>
+<span class="font-label font-bold text-secondary text-sm">Combo completo $5.500</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-outline-variant/40 px-8">
+<div class="py-6 md:pr-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Entrada</p>
+<p class="font-headline font-bold text-on-surface text-base">Hummus con pan de masa madre</p>
+<p class="font-body italic text-secondary text-sm mt-1">Aceite de oliva, pimentón ahumado</p>
+</div>
+<div class="py-6 md:px-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Principal</p>
+<p class="font-headline font-bold text-on-surface text-base">Milanesa de berenjena</p>
+<p class="font-body italic text-secondary text-sm mt-1">Empanizada en semillas, con puré de papa trufado</p>
+</div>
+<div class="py-6 md:pl-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Postre</p>
+<p class="font-headline font-bold text-on-surface text-base">Muffin de naranja y cardamomo</p>
+<p class="font-body italic text-secondary text-sm mt-1">Un recuerdo de Rajastán en formato muffin</p>
+</div>
+</div>
+</div>
+
+<!-- Viernes -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(27,28,25,0.06)]">
+<div class="flex items-center gap-4 px-8 py-5" style="background-color: rgba(135,76,66,0.06);">
+<span class="font-label font-extrabold text-primary text-sm uppercase tracking-widest w-28">Viernes</span>
+<div class="h-px flex-1 bg-outline-variant"></div>
+<span class="font-label font-bold text-secondary text-sm">Combo completo $5.500</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-outline-variant/40 px-8">
+<div class="py-6 md:pr-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Entrada</p>
+<p class="font-headline font-bold text-on-surface text-base">Gazpacho de tomate y pepino</p>
+<p class="font-body italic text-secondary text-sm mt-1">Frío, liviano, para cerrar la semana sin culpa</p>
+</div>
+<div class="py-6 md:px-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Principal</p>
+<p class="font-headline font-bold text-on-surface text-base">Salmón al limón con vegetales</p>
+<p class="font-body italic text-secondary text-sm mt-1">Al vapor, con hierbas frescas y alcaparras</p>
+</div>
+<div class="py-6 md:pl-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Postre</p>
+<p class="font-headline font-bold text-on-surface text-base">Torta de zanahoria y nuez</p>
+<p class="font-body italic text-secondary text-sm mt-1">Con frosting de queso crema. El premio de llegar al viernes.</p>
+</div>
+</div>
+</div>
+
+</div><!-- /espacio días -->
+
+<!-- CTA menú -->
+<div class="mt-14 text-center">
+<p class="font-body italic text-secondary text-lg mb-6">Pedidos hasta el domingo a las 20h para entrega de lunes a viernes en el barrio.</p>
+<a class="inline-flex items-center gap-3 bg-primary text-on-primary font-label font-bold px-10 py-5 rounded-full hover:bg-primary-container transition-colors shadow-[0_10px_30px_rgba(135,76,66,0.3)] text-lg"
+   href="https://wa.me/5493513569171?text=Hola!%20Quiero%20encargar%20el%20men%C3%BA%20ejecutivo%20semanal%20%F0%9F%8D%BD%EF%B8%8F"
+   target="_blank" rel="noopener">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+Encargar mi menú semanal
+</a>
+</div>
+
+</div>
+</section>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- GALERÍA -->
+<!-- ─────────────────────────────────────────── -->
+<section id="galeria" class="bg-surface-container-low py-28 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+<div>
+<span class="font-label text-xs uppercase tracking-widest text-primary font-bold">Imágenes</span>
+<h2 class="font-headline font-extrabold text-5xl md:text-6xl text-on-surface mt-4 tracking-tighter">Galería</h2>
+</div>
+<p class="font-body italic text-secondary text-xl max-w-sm md:text-right">Fotos reales próximamente. Por ahora, imaginá algo lindo.</p>
+</div>
+
+<!-- Grid asimétrico editorial -->
+<div class="gallery-grid">
+
+<!-- Item A: tall left -->
+<div class="gallery-item-a rounded-xl overflow-hidden bg-gradient-to-b from-[#c4756a] to-[#6e372f] relative group shadow-[0_10px_30px_rgba(27,28,25,0.08)]">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 40% 60%, #ffdad4 0%, transparent 70%);"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<p class="font-body italic text-white/90 text-lg">Tortas de autor</p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center text-white/30">
+<span class="material-symbols-outlined text-7xl" style="font-variation-settings: 'FILL' 1;">cake</span>
+</div>
+</div>
+
+<!-- Item B: wide top right -->
+<div class="gallery-item-b rounded-xl overflow-hidden bg-gradient-to-r from-[#b8895a] to-[#8a7968] relative group shadow-[0_10px_30px_rgba(27,28,25,0.08)]">
+<div class="absolute bottom-0 left-0 p-5">
+<p class="font-body italic text-white/90 text-base">Alfajores de maicena</p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center text-white/30">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">cookie</span>
+</div>
+</div>
+
+<!-- Item C -->
+<div class="gallery-item-c rounded-xl overflow-hidden bg-gradient-to-br from-[#655a4b] to-[#4a3f35] relative group shadow-[0_10px_30px_rgba(27,28,25,0.08)]">
+<div class="absolute bottom-0 left-0 p-5">
+<p class="font-body italic text-white/90 text-base">Proceso artesanal</p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center text-white/30">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+</div>
+
+<!-- Item D -->
+<div class="gallery-item-d rounded-xl overflow-hidden bg-gradient-to-br from-[#a46359] to-[#874c42] relative group shadow-[0_10px_30px_rgba(27,28,25,0.08)]">
+<div class="absolute bottom-0 left-0 p-5">
+<p class="font-body italic text-white/90 text-sm">Combos regalo</p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center text-white/30">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">redeem</span>
+</div>
+</div>
+
+<!-- Item E: tall right -->
+<div class="gallery-item-e rounded-xl overflow-hidden bg-gradient-to-b from-[#8a7968] to-[#4a3f35] relative group shadow-[0_10px_30px_rgba(27,28,25,0.08)]">
+<div class="absolute bottom-0 left-0 p-6">
+<p class="font-body italic text-white/90 text-lg">Menú ejecutivo</p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center text-white/30">
+<span class="material-symbols-outlined text-7xl" style="font-variation-settings: 'FILL' 1;">lunch_dining</span>
+</div>
+</div>
+
+<!-- Item F: wide bottom left -->
+<div class="gallery-item-f rounded-xl overflow-hidden bg-gradient-to-r from-[#d3c4b1] to-[#b8a99a] relative group shadow-[0_10px_30px_rgba(27,28,25,0.08)]">
+<div class="absolute bottom-0 left-0 p-5">
+<p class="font-body italic text-on-surface/70 text-base">La cocina de Andu</p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center text-on-surface/20">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">skillet</span>
+</div>
+</div>
+
+</div><!-- /gallery-grid -->
+</div>
+</section>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- HISTORIA: EL ALMA DE ANDU (expandida) -->
+<!-- ─────────────────────────────────────────── -->
+<section id="nosotros" class="bg-surface py-32 px-6">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<!-- Historia expandida -->
+<div class="relative order-2 lg:order-1">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+<h3 class="font-label text-primary font-bold tracking-widest text-sm uppercase mb-6">Nuestra Historia</h3>
+<h2 class="font-headline font-extrabold text-5xl md:text-6xl text-on-surface mb-10 tracking-tighter">El Alma de Andu</h2>
+<div class="space-y-7">
+<p class="font-body text-xl leading-relaxed text-secondary italic">
+"Todo comenzó en una pequeña cocina, donde el aroma a manteca y azúcar era el lenguaje de la casa."
+</p>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant">
+Pero Andu no siempre fue solo harina y dulce de leche. Hubo un tiempo en que empacó poco, respiró hondo y se fue a la India. Varios meses recorriendo mercados de especias en Rajastán, desayunando chai con cardamomo en vasos de barro, aprendiendo que la paciencia no es un defecto sino un ingrediente. Que el tiempo es parte de la receta.
+</p>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant">
+De allá trajo el cardamomo que ahora aparece en sus muffins del jueves, el agua de rosas que perfuma algunas coberturas, y una calma nueva frente al horno. También trajo la certeza de que cocinar bien es un acto de cuidado profundo hacia quien va a comer.
+</p>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant">
+De vuelta en el barrio, montó su taller casero con lo necesario y mucho amor. Selecciona cada ingrediente con la rigurosidad de un joyero. Y cuando llega el momento de los envíos, aparece Jorgito —su novio, copiloto oficial y el hombre que más veces ha llegado a una puerta cargando bolsas con cajas de tortas sin tirarlas. Los dos, en bici por el barrio, son la logística más dulce que conocemos.
+</p>
+<blockquote class="pt-4 pl-6" style="border-left: 3px solid #874c42;">
+<p class="font-body italic text-2xl text-secondary leading-snug">"No somos solo una pastelería. Somos el refugio donde lo dulce encuentra su mejor versión urbana."</p>
+<footer class="mt-4">
+<span class="font-body italic text-2xl text-primary">— Andrea "Andu" Benítez</span>
+</footer>
+</blockquote>
+</div>
+<!-- Mini stats -->
+<div class="grid grid-cols-3 gap-6 mt-12 pt-10" style="border-top: 1px solid rgba(215,194,190,0.4);">
+<div>
+<p class="font-headline font-extrabold text-3xl text-primary">3+</p>
+<p class="font-body italic text-secondary text-sm mt-1">años horneando en el barrio</p>
+</div>
+<div>
+<p class="font-headline font-extrabold text-3xl text-primary">India</p>
+<p class="font-body italic text-secondary text-sm mt-1">la escuela que no se planea</p>
+</div>
+<div>
+<p class="font-headline font-extrabold text-3xl text-primary">Jorgito</p>
+<p class="font-body italic text-secondary text-sm mt-1">delivery oficial desde siempre</p>
+</div>
+</div>
+</div>
+
+<!-- Imágenes asimétricas -->
+<div class="relative order-1 lg:order-2 flex justify-center">
+<div class="relative w-full max-w-md aspect-[4/5] rounded-xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-full object-cover" alt="Retrato de Andu, pastelera, en su cocina con luz de mañana" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Wa9En17-aBjiIs-pfBLhVh2IU4JtCB7ly57FOO04ltrfVaEHf0UwNca-GLL8R2j6j3JRLtLmvELG-OLCS0w0ZRGLQnjzBxOuKkAdbJIFJxpw5n3AbGiNz9UjTatMjqYpCHTFXR0kKxPpIUPXFpeUxwTvd1CHLzLl8b7O_RM_hwE_Eu7-GCl16RbirOUQBMoyTBBwxf1wgOFh2o33i-ElzurrxfjUT-1N05Mv4EZxN306xBfONmYW8ELhFRYmc8aFCoWms1SCc0bq"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 rounded-xl overflow-hidden shadow-xl hidden md:block -rotate-6">
+<img class="w-full h-full object-cover" alt="Manos amasando con luz natural" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1yvZPOuf3kIu38uyIEt0KcwySTWKwJUUItcfg4zNA9766hjLXvFcYUJy_CuiyHpuzzWs71gP6yg-JCK_94V0V_RsWh7uOz9dhrzQvAcbbIVmmmEOwPh-16fgSQC3DjNX6Y4M4ILjqXSWX5CjEIyWijtrwkI5EwVvyoZkfwI2Gzc7-vg2UZ_raXhZxavF5ziEosL4z3a6L8HxF0L9f-CVscxfdKuX42wwnuUlj0-QJxT6iASWhhNBVSvYP6qTW9O8LswITzosTdmg_"/>
+</div>
+<!-- Chip India -->
+<div class="absolute -top-6 -left-6 bg-surface rounded-xl px-5 py-3 shadow-[0_10px_30px_rgba(27,28,25,0.10)] hidden md:block">
+<p class="font-label text-xs text-secondary uppercase tracking-widest">Inspiración</p>
+<p class="font-headline font-bold text-on-surface text-sm mt-0.5">Rajastán, India</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Newsletter / Interactive Catch -->
+<section class="bg-surface-container py-24 px-6 text-center">
+<div class="max-w-4xl mx-auto">
+<span class="material-symbols-outlined text-primary text-5xl mb-6 block">restaurant_menu</span>
+<h2 class="font-headline font-bold text-4xl mb-6">Recibí las sorpresas de la semana</h2>
+<p class="font-body text-xl text-secondary mb-10 italic">Nuevos lanzamientos, menús exclusivos y el toque dulce que tu rutina merece.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+<input class="flex-1 bg-surface focus:ring-2 focus:ring-primary rounded-full px-6 py-4 font-body text-lg italic shadow-[0_10px_30px_rgba(27,28,25,0.06)]" placeholder="Tu correo electrónico" type="email"/>
+<button class="bg-on-surface text-surface font-label font-bold px-8 py-4 rounded-full hover:bg-primary transition-colors" type="submit">Suscribirme</button>
+</form>
+</div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full mt-0 bg-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="font-headline font-extrabold text-xl text-on-surface uppercase tracking-tighter">
+                    Todo Dulce by Andu
+                </div>
+<p class="font-body italic text-lg text-primary">
+                    Artesanal &amp; Urbano. Una experiencia diseñada para elevar cada momento del día.
+                </p>
+<div class="flex gap-4">
+<a class="text-secondary hover:text-on-surface transition-colors material-symbols-outlined" href="#" aria-label="Instagram">brand_instagram</a>
+<a class="text-secondary hover:text-on-surface transition-colors material-symbols-outlined" href="#" aria-label="Facebook">facebook</a>
+<a class="text-secondary hover:text-on-surface transition-colors material-symbols-outlined" href="https://wa.me/5493513569171" target="_blank" rel="noopener" aria-label="WhatsApp">chat</a>
+</div>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="font-label font-bold text-on-surface text-sm uppercase tracking-widest">Explorar</h4>
+<a class="text-secondary hover:text-on-surface transition-colors font-body italic text-lg" href="#catalogo">Catálogo</a>
+<a class="text-secondary hover:text-on-surface transition-colors font-body italic text-lg" href="#menu">Menú Ejecutivo</a>
+<a class="text-secondary hover:text-on-surface transition-colors font-body italic text-lg" href="#galeria">Galería</a>
+<a class="text-secondary hover:text-on-surface transition-colors font-body italic text-lg" href="#nosotros">Nuestra Historia</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="font-label font-bold text-on-surface text-sm uppercase tracking-widest">Contacto &amp; Envíos</h4>
+<p class="font-body italic text-lg text-secondary">
+                    Envíos en el barrio<br/>
+                    de lunes a viernes con Jorgito 🚲
+                </p>
+<p class="font-body italic text-lg text-secondary">
+                    Pedidos por WhatsApp<br/>
+                    +54 9 351 356-9171
+                </p>
+<p class="font-body italic text-lg text-secondary">
+                    Mar – Dom: 09:00 – 20:00
+                </p>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-4" style="border-top: 1px solid rgba(215,194,190,0.4);">
+<p class="font-body italic text-secondary text-sm">© 2024 Todo Dulce by Andu. Artesanal &amp; Urbano.</p>
+<div class="flex gap-8">
+<a class="text-secondary hover:text-on-surface text-sm font-body italic" href="#">Privacidad</a>
+<a class="text-secondary hover:text-on-surface text-sm font-body italic" href="#">Términos</a>
+</div>
+</div>
+</footer>
+
+<!-- FAB WhatsApp -->
+<a class="fixed bottom-8 right-8 z-40 bg-primary text-on-primary w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all group"
+   href="https://wa.me/5493513569171?text=Hola!%20Quiero%20hacer%20un%20pedido%20%F0%9F%8E%82"
+   target="_blank" rel="noopener"
+   aria-label="Hacer pedido por WhatsApp">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="absolute right-full mr-4 bg-on-surface text-surface px-4 py-2 rounded-xl font-label text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Hacer Pedido</span>
+</a>
+
+</body></html>

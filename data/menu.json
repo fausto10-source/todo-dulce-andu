@@ -1,0 +1,82 @@
+[
+  {
+    "dia": "Lunes",
+    "precio": "$5.500",
+    "entrada": {
+      "nombre": "Sopa de lentejas rojas",
+      "desc": "Con jengibre, cúrcuma y cilantro fresco"
+    },
+    "principal": {
+      "nombre": "Tarta de espinaca y queso",
+      "desc": "Masa casera, ensalada verde de estación"
+    },
+    "postre": {
+      "nombre": "Alfajor de avena y maní",
+      "desc": "Relleno de dulce de leche artesanal"
+    }
+  },
+  {
+    "dia": "Martes",
+    "precio": "$5.500",
+    "entrada": {
+      "nombre": "Ensalada César",
+      "desc": "Crutones artesanales, aderezo casero y queso parmesano"
+    },
+    "principal": {
+      "nombre": "Medallón de pollo grillado",
+      "desc": "Con papas rústicas al romero y salsa de mostaza miel"
+    },
+    "postre": {
+      "nombre": "Cookie de chocolate belga",
+      "desc": "Chips de chocolate 70% cacao, manteca de calidad"
+    }
+  },
+  {
+    "dia": "Miércoles",
+    "precio": "$5.500",
+    "entrada": {
+      "nombre": "Crema de zapallo asado",
+      "desc": "Con semillas tostadas y aceite de oliva extra virgen"
+    },
+    "principal": {
+      "nombre": "Pasta fresca al pesto",
+      "desc": "Albahaca de huerta, parmesano, piñones y aceite de oliva"
+    },
+    "postre": {
+      "nombre": "Brownie húmedo de cacao",
+      "desc": "Textura fudgy, con cobertura de ganache artesanal"
+    }
+  },
+  {
+    "dia": "Jueves",
+    "precio": "$5.500",
+    "entrada": {
+      "nombre": "Hummus con pan de masa madre",
+      "desc": "Garbanzos triturados, tahini, limón y pimentón ahumado"
+    },
+    "principal": {
+      "nombre": "Milanesa de berenjena",
+      "desc": "Empanada artesanalmente, con puré de coliflor y limón"
+    },
+    "postre": {
+      "nombre": "Muffin de naranja y cardamomo",
+      "desc": "Esponjoso, con ralladura de naranja y especias suaves"
+    }
+  },
+  {
+    "dia": "Viernes",
+    "precio": "$5.500",
+    "entrada": {
+      "nombre": "Gazpacho de tomate y pepino",
+      "desc": "Frío y vibrante, con aceite de oliva y albahaca fresca"
+    },
+    "principal": {
+      "nombre": "Salmón al limón con vegetales",
+      "desc": "Filete al horno, vegetales de estación salteados al wok"
+    },
+    "postre": {
+      "nombre": "Torta de zanahoria y nuez",
+      "desc": "Con frosting de queso crema y miel de caña"
+    }
+  }
+]
